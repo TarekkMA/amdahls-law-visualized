@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Load d3.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h4>Amdahl’s Law Visualized</h4>
+
+    <label for="n">n:</label>
+    <input
+      id="n"
+      type="number"
+      min="1"
+      step="1"
+      value="16"
+      oninput="validity.valid||(value='');"
+      onchange="draw();"
+    />
+
+    <label for="type">Type:</label>
+    <select id="type" onchange="draw();">
+      <option value="symmetric">symmetric</option>
+      <option value="asymmetric">asymmetric</option>
+      <option value="dynamic">dynamic</option>
+    </select>
+    <br />
+    r range:
+    <br />
+
+    <label for="from">from:</label>
+    <input
+      id="from"
+      type="number"
+      min="1"
+      step="1"
+      value="1"
+      oninput="validity.valid||(value='');"
+      onchange="draw();"
+    />
+    <br />
+
+    <label for="from">to:</label>
+    <input
+      id="to"
+      type="number"
+      min="1"
+      step="1"
+      value="16"
+      oninput="validity.valid||(value='');"
+      onchange="draw();"
+    />
+
+    <br />
+
+    <label for="step">Step:</label>
+    <input
+      id="step"
+      type="number"
+      min="1"
+      step="1"
+      value="1"
+      oninput="validity.valid||(value='');"
+      onchange="draw();"
+    />
+
+    <canvas id="myChart"></canvas>
+
+    <script src="code.js"></script>
+  </body>
+</html>
