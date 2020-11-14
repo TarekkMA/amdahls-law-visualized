@@ -38,13 +38,16 @@ var fValuesColors = [
   [0.999, "pink"],
 ];
 
-var canvas = document.getElementById("myChart");
-var ctx = canvas.getContext("2d");
-
 draw();
 
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  var chartContainer = document.getElementById("chart_container");
+
+  const canvas = document.createElement("canvas");
+  canvas.id = "chart";
+  chartContainer.innerHTML = canvas.outerHTML;
+
+  var ctx = document.getElementById("chart").getContext("2d");
 
   let eq = [symmetricEq, asymmetricEq, dynamicEq][
     document.getElementById("type").selectedIndex
